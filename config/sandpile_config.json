@@ -1,0 +1,21 @@
+{
+    "scenario": {
+        "shape": [6, 6], 
+        "origin": [0, 0], 
+        "wrapped": false 
+    },
+    "cells": {
+        "default": {
+            "delay": "inertial", 
+            "model": "sandpile", 
+            "state": {"height": 0}, 
+            "neighborhood": [
+                { "type": "von_neumann", "range": 1 } 
+            ]
+ },
+        "initial": {
+            "state": {"height":20}, 
+            "cell_map": [ [2,2]]
+        }
+    }
+}

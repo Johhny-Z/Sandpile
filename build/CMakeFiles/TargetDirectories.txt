@@ -1,0 +1,5 @@
+/home/jingqizhang/sandpile_model/build/CMakeFiles/edit_cache.dir
+/home/jingqizhang/sandpile_model/build/CMakeFiles/rebuild_cache.dir
+/home/jingqizhang/sandpile_model/build/main/CMakeFiles/SandpileModel.dir
+/home/jingqizhang/sandpile_model/build/main/CMakeFiles/edit_cache.dir
+/home/jingqizhang/sandpile_model/build/main/CMakeFiles/rebuild_cache.dir

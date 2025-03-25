@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/SandpileModel.dir/main.cpp.o -o /home/jingqizhang/sandpile_model/bin/SandpileModel 
