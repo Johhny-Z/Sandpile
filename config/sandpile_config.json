@@ -1,6 +1,6 @@
 {
     "scenario": {
-        "shape": [6, 6], 
+        "shape": [10, 10], 
         "origin": [0, 0], 
         "wrapped": false 
     },
@@ -14,8 +14,8 @@
             ]
  },
         "initial": {
-            "state": {"height":20}, 
-            "cell_map": [ [2,2]]
+            "state": {"height":100}, 
+            "cell_map": [ [5,5]]
         }
     }
 }
