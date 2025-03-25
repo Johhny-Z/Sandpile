@@ -9,7 +9,7 @@
 using namespace cadmium::celldevs;
 using namespace cadmium;
 
-// 工厂函数：根据配置创建细胞实例
+// Factory function: creates cell instances based on configuration
 std::shared_ptr<GridCell<SandpileState, double>> addGridCell(
     const coordinates & cellId,
     const std::shared_ptr<const GridCellConfig<SandpileState, double>>& cellConfig
@@ -23,25 +23,26 @@ std::shared_ptr<GridCell<SandpileState, double>> addGridCell(
 }
 
 int main(int argc, char ** argv) {
-    if (argc < 2) { // 检查命令行参数
+    // Check command line arguments
+    if (argc < 2) {
         std::cout << "Usage: " << argv[0] << " SCENARIO_CONFIG.json [MAX_SIMULATION_TIME (default: 500)]" << std::endl;
         return -1;
     }
 
-    std::string configFilePath = argv[1]; // 配置文件路径
-    double simTime = (argc > 2)? std::stod(argv[2]) : 500.0; // 模拟时间
+    std::string configFilePath = argv[1]; // Path to configuration file
+    double simTime = (argc > 2)? std::stod(argv[2]) : 500.0; // Simulation time
 
-    // 初始化模型
+    // Initialize the model
     auto model = std::make_shared<GridCellDEVSCoupled<SandpileState, double>>("sandpile", addGridCell, configFilePath);
     model->buildModel();
 
-    // 初始化根协调器
+    // Initialize root coordinator
     auto rootCoordinator = RootCoordinator(model);
-    rootCoordinator.setLogger<CSVLogger>("sandpile_log.csv", ";"); // 使用 CSV 日志记录器
+    rootCoordinator.setLogger<CSVLogger>("sandpile_log.csv", ";"); // Use CSV logger
 
-    // 运行模拟
+    // Run the simulation
     rootCoordinator.start();
-    rootCoordinator.simulate(500.0);
+    rootCoordinator.simulate(simTime);
     rootCoordinator.stop();
 
     return 0;
