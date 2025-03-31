@@ -1,7 +1,7 @@
 ## How to use 
 For building and simulating the project, run the following command from the root directory:
 ```sh
-make sim
+source build_sim.sh
 ./bin/SandpileModel config/sandpile_config.json
 ```
 ## How to modify scenarios
